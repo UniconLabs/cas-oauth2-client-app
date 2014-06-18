@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+version="2.4">
+
+    <display-name>OAuth2 Test Application</display-name>
+    <description>OAuth2 Test Application</description>
+    <servlet>
+        <servlet-name>AuthorizationServlet</servlet-name>
+        <servlet-class>net.unicon.cas.oauth.AuthorizationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthorizationServlet</servlet-name>
+        <url-pattern>/authz</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AuthorizationCallbackServlet</servlet-name>
+        <servlet-class>net.unicon.cas.oauth.AuthorizationCallbackServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthorizationCallbackServlet</servlet-name>
+        <url-pattern>/oauth2callback</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app> 
