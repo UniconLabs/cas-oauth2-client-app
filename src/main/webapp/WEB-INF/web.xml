@@ -7,6 +7,27 @@ version="2.4">
 
     <display-name>OAuth2 Test Application</display-name>
     <description>OAuth2 Test Application</description>
+    
+    <context-param>
+        <param-name>clientId</param-name>
+        <param-value>cas1_key</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>clientSecret</param-name>
+        <param-value>cas1_secret</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>casServerUrlPrefix</param-name>
+        <param-value>https://mmoayyed.unicon.net:8443/cas</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>callbackUrl</param-name>
+        <param-value>https://mmoayyed.unicon.net:8443/OAuth2TestApp/oauth2callback</param-value>
+    </context-param>
+    
     <servlet>
         <servlet-name>AuthorizationServlet</servlet-name>
         <servlet-class>net.unicon.cas.oauth.AuthorizationServlet</servlet-class>

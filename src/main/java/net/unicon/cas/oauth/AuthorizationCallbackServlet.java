@@ -15,6 +15,7 @@
 package net.unicon.cas.oauth;
 
 import java.io.IOException;
+import java.io.Writer;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -34,15 +35,20 @@ public class AuthorizationCallbackServlet extends AbstractOAuthServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             
-            System.out.println(req.getQueryString());
-            System.out.println(req.getRequestURI());
-            
             WebContext ctx = new J2EContext(req, resp);
             OAuthCredentials credentials = client.getCredentials(ctx);
-            System.out.println("Token: " + credentials.getVerifier());
-            
             CasOAuthWrapperProfile profile = client.getUserProfile(credentials, ctx);
-            System.out.println("User id: " + profile.getId());
+            Writer w = resp.getWriter();
+            
+            w.write("<html><body><center>");
+            w.write("<h3>");
+            w.write("User [" + profile.getId() + "] has successfully logged in!");
+            w.write("</h3>");
+            w.write("</center></body></html>");
+            
+            w.flush();
+            w.close();
+            
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
