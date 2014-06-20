@@ -40,5 +40,8 @@ mvn clean package
 Then copy `target\OAuth2TestApp.war` to `$CATALINA_HOME\webapps`
  
  
+## Test
+
+In your browser, navigate to: `https://mmoayyed.unicon.net:8443/OAuth2TestApp`
 
 
