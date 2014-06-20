@@ -29,15 +29,15 @@ In the `web.xml` file, change the following settings:
 </context-param>
 ```
  
- ## Deploy
+## Deploy
+
+From the command line:
  
- From the command line:
+```bash
+mvn clean package
+```
  
- ```bash
- mvn clean package
- ```
- 
- Then copy `target\OAuth2TestApp.war` to `$CATALINA_HOME\webapps`
+Then copy `target\OAuth2TestApp.war` to `$CATALINA_HOME\webapps`
  
  
 
